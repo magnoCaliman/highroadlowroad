@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+</head>
+
+<body>
+  <p style="position:fixed; bottom: 0">
+    '1' = one-shot cards <br>
+    'l' = loop cards <br>
+    'v' = verbal cards <br>
+    'e" = end card
+  </p>
+</body>
+
+<script type="text/javascript">
+
+  let oneShot = ['Density \\', 'Density /', 'Pitch \\', 'Pitch /', 'Speed \\', 'Speed /', 'Texture \\', 'Texture /', 'Timbre \\', 'Timbre /', 'Volume \\', 'Volume /']; //12 items
+
+  let oneShotUpperCase = ['DENSITY \\', 'DENSITY /', 'PITCH \\', 'PITCH /', 'SPEED \\', 'SPEED /', 'TEXTURE \\', 'TEXTURE /', 'TIMBRE \\', 'TIMBRE /', 'VOLUME \\', 'VOLUME /']; //12 items
+
+  let oneShotDownCase = ['density \\', 'density /', 'pitch \\', 'pitch /', 'speed \\', 'speed /', 'texture \\', 'texture /', 'timbre \\', 'timbre /', 'volume \\', 'volume /']; //12 items
+  
+  let loops = ['Density loop #1 \\', 'Density loop #2 /', 'Density loop #3 /\\', 'Pitch loop #1 \\', 'Pitch loop #2 /', 'Pitch loop #3 /\\', 'Speed loop #1 \\', 'Speed loop #2 /', 'Speed loop #3 /\\', 'Texture loop #1 \\', 'Texture loop #2 /', 'Texture loop #3 /\\', 'Timbre loop #1 \\', 'Timbre loop #2 /', 'Timbre loop #3 /\\', 'Volume loop #1 \\', 'Volume loop #2 /', 'Volume loop #3 /\\']; //18 items
+
+  let loopsUpperCase = ['DENSITY LOOP #1 \\', 'DENSITY LOOP #2 /', 'DENSITY LOOP #3 /\\', 'PITCH LOOP #1 \\', 'PITCH LOOP #2 /', 'PITCH LOOP #3 /\\', 'SPEED LOOP #1 \\', 'SPEED LOOP #2 /', 'SPEED LOOP #3 /\\', 'TEXTURE LOOP #1 \\', 'TEXTURE LOOP #2 /', 'TEXTURE LOOP #3 /\\', 'TIMBRE LOOP #1 \\', 'TIMBRE LOOP #2 /', 'TIMBRE LOOP #3 /\\', 'VOLUME LOOP #1 \\', 'VOLUME LOOP #2 /', 'VOLUME LOOP #3 /\\']; //18 items
+
+  let loopsDownCase = ['density loop #1 \\', 'density loop #2 /', 'density loop #3 /\\', 'pitch loop #1 \\', 'pitch loop #2 /', 'pitch loop #3 /\\', 'speed loop #1 \\', 'speed loop #2 /', 'speed loop #3 /\\', 'texture loop #1 \\', 'texture loop #2 /', 'texture loop #3 /\\', 'timbre loop #1 \\', 'timbre loop #2 /', 'timbre loop #3 /\\', 'volume loop #1 \\', 'volume loop #2 /', 'volume loop #3 /\\']; //18 items
+  
+  let verbal = ['Enter when another sound stops. Reproduce it as accurately as you can.', 'Play with them', 'Play with me', 'Remain silent until you hear the ends of at least two sounds currently occurring', 'Make sound for a while', 'Stop playing for a while', 'Occasionally incorporate longer silences']; //7 items
+  
+  let bgColor = 200;
+  
+  function setup()
+  {
+      createCanvas(600, 400);
+      frameRate(1);
+      noLoop();
+      
+      textSize(48);
+      textAlign(CENTER);
+      textFont('Calibri')
+  }
+
+  function draw()
+  {
+      background(bgColor);
+  }
+
+   function keyPressed()
+   {
+       if (keyCode == 76) // 'l' for loop instructions
+       {
+	   background(bgColor);
+   	   text(loopsDownCase[int(random(18))], 20, 40, 580);
+       }
+
+       if (keyCode == 49) // '1' for oneShot instructions
+       {
+	   background(bgColor);
+   	   text(oneShotDownCase[int(random(12))], 20, 40, 580);
+       }
+
+       if (keyCode == 86) // 'v' for verbal instructions
+       {
+	   background(bgColor);
+   	   text(verbal[int(random(7))], 20, 40, 580);
+       }
+
+       if (keyCode == 69) // 'e' for END?
+       {
+	   background(bgColor);
+	   text('END?', 20, 40, 580);
+       }
+   } 
+</script>
+</html>
